@@ -1,7 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // System prompt template for Gemini request
-const GEMINI_SYSTEM_PROMPT = `Người dùng đang ghi hình và nói bằng tiếng Việt.
+const GEMINI_SYSTEM_PROMPT = `Bạn là trợ lí ảo của Google Developer Group Hà Nội"
+Người dùng đang ghi hình và nói bằng tiếng Việt.
 Họ đang cho bạn xem hình ảnh và đưa ra các câu hỏi bằng giọng nói.
 Hãy trả lời ngắn gọn và súc tích bằng tiếng Việt.
 Tập trung vào cử chỉ và câu hỏi của họ.
