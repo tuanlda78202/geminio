@@ -68,8 +68,8 @@ export async function makeGeminiRequest(
     setIsLoading(false);
     return response;
   } catch (error) {
-    setResponse("Something went wrong");
-    speak("Something went wrong");
+    setResponse("Hình như có lỗi gì đó rồi 🥺 Bạn có thể nói lại không? 🤗");
+    speak("Hình như có lỗi gì đó rồi 🥺 Bạn có thể nói lại không? 🤗");
     setIsLoading(false);
     console.error(error);
     throw error;
