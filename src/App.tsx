@@ -41,7 +41,7 @@ const App = () => {
           <Flex direction={"column"} gap={"5"} mb={isMobile ? "9" : "1"}>
             <Text
               className="text-white text-center"
-              size={"6"}
+              size={"7"}
               weight={"medium"}
             >
               {response
@@ -52,7 +52,7 @@ const App = () => {
                     ? "Đang nhận câu hỏi...👨🏼‍💻"
                     : autoMode
                       ? "Auto mode enabled"
-                      : `Hãy nói "Xin chào GDG Hà Nội"`}
+                      : `Mình là Gemini-o, trợ lí ảo của GDG Hà Nội 🤗`}
             </Text>
           </Flex>
           <Flex
