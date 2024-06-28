@@ -34,7 +34,7 @@ const App = () => {
   const { isMobile } = useResponsive();
 
   return (
-    <div className="flex flex-col sm:flex-row h-screen bg-black p-8" relative>
+    <div className="flex flex-col sm:flex-row h-screen bg-black p-8">
       <div className="absolute top-4 right-4">
         <Flex gap="2" align="center">
           <Switch
