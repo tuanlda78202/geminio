@@ -13,65 +13,62 @@ body {
 
 .radix-themes {
   --default-font-family: "Nunito", sans-serif;
+
   .rt-SwitchButton {
     background-color: #b1b1b1;
   }
 }
 
 @keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
   100% {
-    transform: rotate(1turn);
+    transform: rotate(360deg);
   }
 }
 
-.border-anim {
+.motion-gradient-border {
   position: relative;
-  z-index: 0;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
-  font-weight: bold;
+  padding: 3px;
   border-radius: 30px;
-  overflow: hidden;
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -2;
-    left: -50%;
-    top: -50%;
-    width: 200%;
-    height: 200%;
-    background-color: #000;
-    background-repeat: no-repeat;
-    background-size: 50% 50%, 50% 50%;
-    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-    background-image: linear-gradient(#d6dbe2, #d6dbe2),
-      linear-gradient(#6298cd, #6298cd), linear-gradient(#6298cd, #6298cd),
-      linear-gradient(#d6dbe2, #d6dbe2), linear-gradient(#6298cd, #6298cd);
-    animation: rotate 4s linear infinite;
-    border-radius: 30px;
-    overflow: hidden;
-  }
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 3px;
-    top: 3px;
-    right: 3px;
-    bottom: 3px;
-    background: #000;
-    border-radius: 30px;
-    overflow: hidden;
-  }
+.motion-gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg,
+      #ff6b6b,
+      #4ecdc4,
+      #45b7d1,
+      #f7b733,
+      #ff6b6b);
+  animation: rotate 4s linear infinite;
+}
+
+.gradient-inner-border {
+  position: relative;
+  background: black;
+  border-radius: 27px;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .video-container {
   object-fit: cover;
   height: 100%;
   width: 100%;
-  border-radius: 30px;
+  border-radius: 27px;
+}
+
+.animated-dots {
+  display: inline-block;
+  width: 30px;
+  text-align: left;
 }

@@ -1,7 +1,25 @@
+import React, { useState, useEffect } from 'react';
 import { Flex, Switch, Text } from "@radix-ui/themes";
 import useApp from "@/hooks/useApp";
 import useResponsive from "@/hooks/useResponsive";
 import Links from "./components/Links";
+
+const AnimatedDots = () => {
+  const [dotCount, setDotCount] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDotCount((prev) => (prev + 1) % 4);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <span className="animated-dots">
+      {'.'.repeat(dotCount)}
+    </span>
+  );
+};
 
 const App = () => {
   const {
@@ -16,21 +34,29 @@ const App = () => {
   const { isMobile } = useResponsive();
 
   return (
-    <div className="flex flex-col sm:flex-row h-screen bg-black p-8">
-      <Links />
-      <div className="lg:w-2/3 lg:h-full md:w-2/3 md:h-full sm:w-full h-4/6 sm:mr-2 mb-2 sm:mb-0">
-        <div
-          className={`justify-center overflow-hidden flex items-center rounded-[30px] h-full ${isLoading ? "border-anim p-[3px]" : "border-[3.5px]"
-            }`}
-        >
-          <video
-            ref={videoRef}
-            className="w-full h-full video-container"
-            autoPlay
-            playsInline
-            muted
-            style={{ borderRadius: isLoading ? 30 : 0 }}
+    <div className="flex flex-col sm:flex-row h-screen bg-black p-8" relative>
+      <div className="absolute top-4 right-4">
+        <Flex gap="2" align="center">
+          <Switch
+            variant="surface"
+            color="red"
+            checked={autoMode}
+            onCheckedChange={() => setAutoMode(!autoMode)}
           />
+          <Text className="text-white text-center"></Text>
+        </Flex>
+      </div>
+      <div className="lg:w-2/3 lg:h-full md:w-2/3 md:h-full sm:w-full h-4/6 sm:mr-2 mb-2 sm:mb-0">
+        <div className={`motion-gradient-border rounded-[30px] h-full ${isLoading ? 'loading' : ''}`}>
+          <div className="gradient-inner-border h-full">
+            <video
+              ref={videoRef}
+              className="w-full h-full video-container"
+              autoPlay
+              playsInline
+              muted
+            />
+          </div>
         </div>
       </div>
       <div className="lg:w-1/3 lg:h-full md:w-1/3 md:h-full sm:w-full h-2/6">
@@ -47,9 +73,9 @@ const App = () => {
               {response
                 ? response
                 : listening
-                  ? "Đang lắng nghe...🧏🏻"
+                  ? <span>Đang lắng nghe<AnimatedDots /></span>
                   : isLoading
-                    ? "Đang nhận câu hỏi...👨🏼‍💻"
+                    ? <span>Đang xử lí câu hỏi<AnimatedDots /></span>
                     : autoMode
                       ? "Auto mode enabled"
                       : `Mình là Gemini-o, trợ lí ảo của GDG Hà Nội 🤗`}
@@ -57,30 +83,12 @@ const App = () => {
           </Flex>
           <Flex
             direction={"column"}
-            className="absolute bottom-0 py-4 text-center"
+            className="absolute bottom-0 pb-8 text-center"
           >
-            <Flex gap="2" mb={isMobile ? "3" : "1"}>
-              <Switch
-                checked={autoMode}
-                onCheckedChange={() => setAutoMode(!autoMode)}
-              />
-              <Text className="text-white text-center">Auto mode</Text>
-            </Flex>
-
-            {!autoMode && (
-              <Text
-                mt={"3"}
-                className="text-white text-center"
-                size={"4"}
-                weight={"medium"}
-              >
-              </Text>
-            )}
-
             <img
-              className="w-28 ml-3"
+              className="w-40 ml-3 mb-8"
               src={
-                "https://ppc.land/content/images/size/w1200/2023/12/Google-Gemini-AI-2.webp"
+                "../public/gdg.png"
               }
             />
           </Flex>
