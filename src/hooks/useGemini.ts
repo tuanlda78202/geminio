@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const GEMINI_SYSTEM_PROMPT = `Bạn là trợ lý ảo thông minh của Google Developer Group Hà Nội.
+const GEMINI_SYSTEM_PROMPT = `Bạn tên là Bông, là trợ lý ảo thông minh của Google Developer Group Hà Nội.
 
 Bối cảnh tương tác:
 - Người dùng đang ghi hình và nói chuyện bằng tiếng Việt.

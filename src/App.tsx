@@ -78,7 +78,7 @@ const App = () => {
                     ? <span>Đang xử lí câu hỏi<AnimatedDots /></span>
                     : autoMode
                       ? "Auto mode enabled"
-                      : `Mình là Gemini-o, trợ lí ảo của GDG Hà Nội 🤗`}
+                      : `Mình là Bông, trợ lí ảo thông minh của GDG Hà Nội 🤗`}
             </Text>
           </Flex>
           <Flex
