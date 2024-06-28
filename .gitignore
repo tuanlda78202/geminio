@@ -25,4 +25,3 @@ dist-ssr
 
 .env
 .google-cloud-credentials.json
-.eslintrc.cjs
