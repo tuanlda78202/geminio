@@ -2,6 +2,7 @@ import { Flex, Text } from "@radix-ui/themes";
 import useApp from "@/hooks/useApp";
 import VoiceCircle from "./components/VoiceCircle";
 import Switch from "./components/Switch";
+import Loader from "./components/Loader";
 
 const App = () => {
   const { isLoading, videoRef, response, listening, autoMode, setAutoMode, transcript } = useApp();
@@ -16,7 +17,7 @@ const App = () => {
             checked={autoMode}
             onCheckedChange={() => setAutoMode(!autoMode)}
           /> */}
-          <Switch { ...{ autoMode, setAutoMode } } />
+          <Switch {...{ autoMode, setAutoMode }} />
           <Text className="text-white text-center"></Text>
         </Flex>
       </div>
@@ -38,7 +39,7 @@ const App = () => {
       <div className="flex flex-col justify-center md:w-1/3 md:h-full">
         <div className={`bg-black p-4 w-full justify-center flex flex-col flex-wrap items-center`}>
           <div className="md:hidden block mb-9">
-            <Switch { ...{ autoMode, setAutoMode } } />
+            <Switch {...{ autoMode, setAutoMode }} />
           </div>
           <Flex direction={"column"} gap={"5"} mb="6">
             <Text className="text-white text-center" size={"7"} weight={"medium"}>
@@ -46,7 +47,7 @@ const App = () => {
                 (listening ? (
                   <VoiceCircle transcript={transcript} />
                 ) : isLoading ? (
-                  <div className="loader"></div>
+                  <Loader />
                 ) : autoMode ? (
                   "Auto mode enabled"
                 ) : (

@@ -51,18 +51,13 @@ body {
 }
 
 .motion-gradient-border::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: conic-gradient(from 0deg,
-      #ff6b6b,
-      #4ecdc4,
-      #45b7d1,
-      #f7b733,
-      #ff6b6b);
+  background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b733, #ff6b6b);
   animation: rotate 4s linear infinite;
 }
 
@@ -94,7 +89,7 @@ body {
   aspect-ratio: 1;
   background-color: white;
   border-radius: 50%;
-  transition: all .05s;
+  transition: all 0.05s;
   animation: voice-animation 100ms;
 }
 
@@ -106,13 +101,16 @@ body {
   margin: 20px auto;
   position: relative;
   background: currentColor;
-  color: #FFF;
+  color: #fff;
   box-sizing: border-box;
-  animation: animloader .4s .3s linear infinite alternate;
+  animation: animloader 0.4s 0.2s linear infinite alternate;
 }
 
-.loader::after, .loader::before {
-  content: '';
+.loader .child-1,
+.loader .child-2,
+.loader .child-3,
+.loader .child-4 {
+  content: "";
   width: 24px;
   height: 48px;
   border-radius: 18px;
@@ -120,26 +118,45 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 28px;
   box-sizing: border-box;
-  animation: animloader .4s .45s linear infinite alternate;
+  animation: animloader 0.4s 0.45s linear infinite alternate;
 }
-.loader::before {
+
+.loader .child-1 {
+  left: -56px;
+  animation-delay: 0;
+}
+
+.loader .child-2 {
   left: -28px;
-  animation-delay: 0s;
+  animation-delay: 0.1s;
+}
+
+.loader .child-3 {
+  left: 28px;
+  animation-delay: 0.3s;
+}
+
+.loader .child-4 {
+  left: 56px;
+  animation-delay: 0.4s;
 }
 
 @keyframes animloader {
-  0%   { height: 48px}
-  100% { height: 4px}
+  0% {
+    height: 48px;
+  }
+  100% {
+    height: 4px;
+  }
 }
 
 /* button */
 .switch-btn {
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   border: none;
   outline: none;
-  color: #FFF;
+  color: #fff;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -161,8 +178,14 @@ body {
   content: "";
   background: linear-gradient(
     45deg,
-    #FF0000, #FF7300, #FFFB00, #48FF00,
-    #00FFD5, #002BFF, #FF00C8, #FF0000
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #ff00c8,
+    #ff0000
   );
   position: absolute;
   top: -2px;
@@ -173,15 +196,21 @@ body {
   height: calc(100% + 4px);
   filter: blur(8px);
   animation: glowing 20s linear infinite;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 4rem;
   opacity: 0;
 }
 
 @keyframes glowing {
-  0% {background-position: 0 0;}
-  50% {background-position: 400% 0;}
-  100% {background-position: 0 0;}
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* hover */
