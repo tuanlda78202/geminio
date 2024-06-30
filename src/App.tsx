@@ -9,8 +9,8 @@ const App = () => {
 
   return (
     <div className="flex flex-col sm:flex-row h-screen bg-black p-8">
-      <div className="absolute top-8 right-4 md:block hidden">
-        <Flex gap="2" align="center">
+      <div className="absolute top-8 right-8 md:block hidden">
+        <Flex align="center">
           <Switch {...{ autoMode, setAutoMode }} />
           <Text className="text-white text-center"></Text>
         </Flex>
