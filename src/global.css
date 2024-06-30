@@ -72,3 +72,17 @@ body {
   width: 30px;
   text-align: left;
 }
+
+.voice-circle {
+  max-width: 128px;
+  width: 280px;
+  display: block;
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+  transition: all .05s;
+}
+
+.voice-circle:hover {
+  scale: 1.05;
+}
