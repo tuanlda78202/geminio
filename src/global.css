@@ -29,6 +29,20 @@ body {
   }
 }
 
+@keyframes voice-animation {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
 .motion-gradient-border {
   position: relative;
   overflow: hidden;
@@ -81,8 +95,5 @@ body {
   background-color: white;
   border-radius: 50%;
   transition: all .05s;
-}
-
-.voice-circle:hover {
-  scale: 1.05;
+  animation: voice-animation 100ms;
 }

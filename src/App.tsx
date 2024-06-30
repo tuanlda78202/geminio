@@ -17,7 +17,7 @@ const AnimatedDots = () => {
 };
 
 const App = () => {
-  const { isLoading, videoRef, response, listening, autoMode, setAutoMode } = useApp();
+  const { isLoading, videoRef, response, listening, autoMode, setAutoMode, transcript } = useApp();
 
   return (
     <div className="flex flex-col sm:flex-row h-screen bg-black p-8">
@@ -47,7 +47,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center lg:w-1/3 lg:h-full md:w-1/3 md:h-full sm:w-full h-2/6">
+      <div className="flex flex-col justify-center md:w-1/3 md:h-full">
         <div className={`bg-black p-4 w-full justify-center flex flex-col flex-wrap items-center`}>
           <div className="md:hidden block mb-9">
             <Switch
@@ -59,24 +59,23 @@ const App = () => {
           </div>
           <Flex direction={"column"} gap={"5"} mb="6">
             <Text className="text-white text-center" size={"7"} weight={"medium"}>
-              {response ? (
-                response
-              ) : listening ? (
-                <VoiceCircle />
-              ) : isLoading ? (
-                <span>
-                  Đang xử lí câu hỏi
-                  <AnimatedDots />
-                </span>
-              ) : autoMode ? (
-                "Auto mode enabled"
-              ) : (
-                `Mình là Bông, trợ lí ảo thông minh của GDG Hà Nội 🤗`
-              )}
+              {response ||
+                (listening ? (
+                  <VoiceCircle transcript={transcript} />
+                ) : isLoading ? (
+                  <span>
+                    Đang xử lí câu hỏi
+                    <AnimatedDots />
+                  </span>
+                ) : autoMode ? (
+                  "Auto mode enabled"
+                ) : (
+                  `Mình là Bông, trợ lí ảo thông minh của GDG Hà Nội 🤗`
+                ))}
             </Text>
           </Flex>
           <div className="text-center absolute bottom-0">
-            <img className="w-40 mb-8" src={"../public/gdg.png"} />
+            <img className="w-40 mb-8" src="/gdg.png" />
           </div>
         </div>
       </div>

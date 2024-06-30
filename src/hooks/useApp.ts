@@ -162,6 +162,7 @@ const useApp = () => {
     setIsFrontCamera,
     isFrontCamera,
     conversationHistory,
+    transcript,
   };
 };
 

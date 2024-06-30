@@ -1,3 +1,3 @@
-export default function VoiceCircle() {
-  return <div className="voice-circle"></div>;
+export default function VoiceCircle({ transcript }: { transcript: string }) {
+  return <div key={transcript} className="voice-circle"></div>;
 }
