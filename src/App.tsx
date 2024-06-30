@@ -1,20 +1,6 @@
-import { useState, useEffect } from "react";
 import { Flex, Switch, Text } from "@radix-ui/themes";
 import useApp from "@/hooks/useApp";
 import VoiceCircle from "./components/VoiceCircle";
-
-const AnimatedDots = () => {
-  const [dotCount, setDotCount] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDotCount((prev) => (prev + 1) % 4);
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
-
-  return <span className="animated-dots">{".".repeat(dotCount)}</span>;
-};
 
 const App = () => {
   const { isLoading, videoRef, response, listening, autoMode, setAutoMode, transcript } = useApp();
@@ -63,10 +49,7 @@ const App = () => {
                 (listening ? (
                   <VoiceCircle transcript={transcript} />
                 ) : isLoading ? (
-                  <span>
-                    Đang xử lí câu hỏi
-                    <AnimatedDots />
-                  </span>
+                  <div className="loader"></div>
                 ) : autoMode ? (
                   "Auto mode enabled"
                 ) : (

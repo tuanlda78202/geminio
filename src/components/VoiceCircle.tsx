@@ -1,3 +1,3 @@
 export default function VoiceCircle({ transcript }: { transcript: string }) {
-  return <div key={transcript} className="voice-circle"></div>;
+  return <div key={new Date().toString()} className="voice-circle"></div>;
 }
