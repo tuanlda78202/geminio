@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import annyang, { Commands } from "annyang";
 import "regenerator-runtime/runtime";
-import SpeechRecognition, {
-  useSpeechRecognition,
-} from "react-speech-recognition";
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import { makeGeminiRequest } from "./useGemini";
 import { useSpeech } from "./useSpeech";
 
 interface ConversationTurn {
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   content: string;
 }
 
@@ -20,9 +18,7 @@ const useApp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [autoMode, setAutoMode] = useState(false);
   const [response, setResponse] = useState("");
-  const [base64Frames, setBase64Frames] = useState<
-    { mimeType: string; data: string }[]
-  >([]);
+  const [base64Frames, setBase64Frames] = useState<{ mimeType: string; data: string }[]>([]);
   const [conversationHistory, setConversationHistory] = useState<ConversationTurn[]>([]);
 
   const { transcript, resetTranscript, listening } = useSpeechRecognition();
@@ -32,7 +28,7 @@ const useApp = () => {
   const handleListing = () => {
     SpeechRecognition.startListening({
       continuous: false,
-      language: 'vi-VN'
+      language: "vi-VN",
     });
   };
 
@@ -59,13 +55,7 @@ const useApp = () => {
         canvas.height = videoRef.current.videoHeight;
         const context = canvas.getContext("2d");
         if (context) {
-          context.drawImage(
-            videoRef.current,
-            0,
-            0,
-            canvas.width,
-            canvas.height
-          );
+          context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
           const base64Frame = canvas.toDataURL("image/jpeg");
           let [mimeType, data] = base64Frame.split(";base64,");
           mimeType = mimeType.split(":")[1];
@@ -81,7 +71,7 @@ const useApp = () => {
       stopHandle();
       clearInterval(frameInterval);
 
-      setConversationHistory(prev => [...prev, { role: 'user', content: transcript }]);
+      setConversationHistory((prev) => [...prev, { role: "user", content: transcript }]);
 
       makeGeminiRequest(
         transcript,
@@ -97,7 +87,7 @@ const useApp = () => {
 
   useEffect(() => {
     if (response) {
-      setConversationHistory(prev => [...prev, { role: 'assistant', content: response }]);
+      setConversationHistory((prev) => [...prev, { role: "assistant", content: response }]);
     }
   }, [response]);
 
@@ -162,6 +152,7 @@ const useApp = () => {
     setIsFrontCamera,
     isFrontCamera,
     conversationHistory,
+    transcript,
   };
 };
 
