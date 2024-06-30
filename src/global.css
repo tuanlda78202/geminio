@@ -99,9 +99,9 @@ body {
 }
 
 .loader {
-  width: 8px;
-  height: 40px;
-  border-radius: 4px;
+  width: 24px;
+  height: 48px;
+  border-radius: 18px;
   display: block;
   margin: 20px auto;
   position: relative;
@@ -113,19 +113,19 @@ body {
 
 .loader::after, .loader::before {
   content: '';
-  width: 8px;
-  height: 40px;
-  border-radius: 4px;
+  width: 24px;
+  height: 48px;
+  border-radius: 18px;
   background: currentColor;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 20px;
+  left: 28px;
   box-sizing: border-box;
   animation: animloader .4s .45s linear infinite alternate;
 }
 .loader::before {
-  left: -20px;
+  left: -28px;
   animation-delay: 0s;
 }
 
