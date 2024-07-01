@@ -15,7 +15,7 @@
 
 ## Overview
 
-As part of Google for Developers' mission to build for the community, I am thrilled to share the comprehensive workflow of the web application I will be presenting at the AI booth during Google I/O Extended Hanoi 2024. This application, named "Bông”, is a real-time VLM web app featuring both voice input and output capabilities.
+As part of Google for Developers' mission to build for the community, the comprehensive workflow of the web application presented at the AI booth during Google I/O Extended Hanoi 2024 is shared. This application, named 'Bông', is a real-time VLM web app featuring both voice input and output capabilities.
 
 | ![Architecture](https://github.com/tuanlda78202/geminio/blob/main/public/bong.png) | 
 |:--:| 
@@ -103,7 +103,7 @@ We welcome contributions from the community. Please follow these steps to contri
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/tuanlda78202/geminio/blob/main/LICENSE.txt) file for details.
 
 ## Contact
 
