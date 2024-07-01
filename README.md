@@ -15,11 +15,11 @@
 
 ## Overview
 
-As part of Google for Developers' mission to build for the community, the comprehensive workflow of the web application presented at the AI booth during Google I/O Extended Hanoi 2024 is shared. This application, named 'Bông', is a real-time VLM web app featuring both voice input and output capabilities.
+As part of Google for Developers' mission to build for the community, the comprehensive workflow of the web application presented at the AI booth during Google I/O Extended Hanoi 2024 is shared. This application, named `Bông`, is a real-time VLM web app featuring both voice input and output capabilities.
 
 | ![Architecture](https://github.com/tuanlda78202/geminio/blob/main/public/bong.png) | 
 |:--:| 
-| Speak, See, and Interact with Bong|
+| Speak, See, and Interact with Bông|
 
 ## Features
 
@@ -62,6 +62,7 @@ As part of Google for Developers' mission to build for the community, the compre
     ```bash
     npm install
     ```
+4. Download `.google-cloud-credentials` from Google Cloud and set up `VITE_GEMINI_KEY`, `GOOGLE_APPLICATION_CREDENTIALS` in `.env`.
 
 4. Run the application:
 
