@@ -76,6 +76,12 @@ body {
   border-radius: 27px;
 }
 
+.video-mirror {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
 .animated-dots {
   display: inline-block;
   width: 30px;
