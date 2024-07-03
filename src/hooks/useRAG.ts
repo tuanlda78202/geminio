@@ -1,22 +1,42 @@
 import { Document } from "langchain/document";
-import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import fs from 'fs/promises';
 import path from 'path';
 
 const TEXT_DIR = 'data';
+const EMBEDDINGS_FILE = 'public/embeddings.json';
 
-async function initializeChromaDB(): Promise<Chroma> {
-    const embeddings = new GoogleGenerativeAIEmbeddings({
-        modelName: "embedding-001",
-        apiKey: import.meta.env.VITE_GEMINI_KEY,
-    });
+interface EmbeddedDocument {
+    pageContent: string;
+    metadata: Record<string, string>;
+    embedding: number[];
+}
 
-    return await Chroma.fromExistingCollection(
-        embeddings,
-        { collectionName: "gdg_hanoi_docs" }
-    );
+let embeddedDocs: EmbeddedDocument[] | null = null;
+
+async function saveEmbeddingsToFile(embeddings: EmbeddedDocument[]) {
+    try {
+        await fs.writeFile(EMBEDDINGS_FILE, JSON.stringify(embeddings), 'utf8');
+        console.log("Embeddings successfully saved to file");
+    } catch (error) {
+        console.error("Error saving embeddings to file:", error);
+    }
+}
+
+async function loadEmbeddingsFromFile(): Promise<EmbeddedDocument[] | null> {
+    try {
+        const response = await fetch(EMBEDDINGS_FILE);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("Embeddings successfully loaded from file");
+        return data;
+    } catch (error) {
+        console.error('Error loading embeddings:', error);
+        return null;
+    }
 }
 
 function parseDocument(content: string): Record<string, string> {
@@ -44,29 +64,25 @@ function parseDocument(content: string): Record<string, string> {
 
 export async function embedDocuments() {
     const embeddings = new GoogleGenerativeAIEmbeddings({
-        modelName: "embedding-001",
+        modelName: "text-embedding-004",
         apiKey: process.env.VITE_GEMINI_KEY,
     });
 
-    const vectorStore = await Chroma.fromExistingCollection(
-        embeddings,
-        { collectionName: "gdg_hanoi_docs" }
-    );
+    try {
+        const files = await fs.readdir(TEXT_DIR);
+        const embeddedDocs: EmbeddedDocument[] = [];
 
-    const files = await fs.readdir(TEXT_DIR);
+        for (const file of files) {
+            const filePath = path.join(TEXT_DIR, file);
+            const loader = new TextLoader(filePath);
+            const [doc] = await loader.load();
 
-    for (const file of files) {
-        const filePath = path.join(TEXT_DIR, file);
-        const loader = new TextLoader(filePath);
-        const [doc] = await loader.load();
+            const parsedDoc = parseDocument(doc.pageContent);
+            const { title, subtopic, tags, content, ...sections } = parsedDoc;
 
-        const parsedDoc = parseDocument(doc.pageContent);
-        const { title, subtopic, tags, content, ...sections } = parsedDoc;
-
-        // Embed each section separately
-        for (const [sectionName, sectionContent] of Object.entries(sections)) {
-            await vectorStore.addDocuments([
-                new Document({
+            for (const [sectionName, sectionContent] of Object.entries(sections)) {
+                const embedding = await embeddings.embedQuery(sectionContent);
+                embeddedDocs.push({
                     pageContent: sectionContent,
                     metadata: {
                         title,
@@ -74,20 +90,87 @@ export async function embedDocuments() {
                         tags,
                         section: sectionName,
                         file
-                    }
-                })
-            ]);
+                    },
+                    embedding
+                });
+            }
+            console.log(`Embedded document: ${file}`);
         }
-    }
 
-    console.log("Documents embedded and stored in Chroma DB");
+        await saveEmbeddingsToFile(embeddedDocs);
+        console.log("All documents embedded and stored in local file");
+    } catch (error) {
+        console.error("Error during document embedding:", error);
+    }
+}
+
+function cosineSimilarity(vec1: number[], vec2: number[]): number {
+    const dotProduct = vec1.reduce((sum, val, i) => sum + val * vec2[i], 0);
+    const mag1 = Math.sqrt(vec1.reduce((sum, val) => sum + val * val, 0));
+    const mag2 = Math.sqrt(vec2.reduce((sum, val) => sum + val * val, 0));
+    return dotProduct / (mag1 * mag2);
 }
 
 export async function retrieveRelevantDocs(query: string): Promise<Document[]> {
-    const vectorStore = await initializeChromaDB();
+    console.log(`Starting retrieval for query: "${query}"`);
 
-    // Perform a similarity search
-    const results = await vectorStore.similaritySearch(query, 5);
+    if (!embeddedDocs) {
+        console.log("Loading embeddings from file...");
+        embeddedDocs = await loadEmbeddingsFromFile();
+        if (!embeddedDocs) {
+            console.error("No embeddings found. Please run embedDocuments first.");
+            return [];
+        }
+    }
 
-    return results;
+    try {
+        const embeddings = new GoogleGenerativeAIEmbeddings({
+            modelName: "text-embedding-004",
+            apiKey: import.meta.env.VITE_GEMINI_KEY,
+        });
+
+        console.log("Generating query embedding...");
+        const queryEmbedding = await embeddings.embedQuery(query);
+
+        console.log("Calculating similarities...");
+        const scoredDocs = embeddedDocs.map((doc) => ({
+            ...doc,
+            score: cosineSimilarity(queryEmbedding, doc.embedding)
+        }));
+
+        scoredDocs.sort((a, b) => b.score - a.score);
+
+        console.log("Top 5 similarity scores:");
+        scoredDocs.slice(0, 5).forEach((doc, index) => {
+            console.log(`${index + 1}. Score: ${doc.score.toFixed(4)}, Title: ${doc.metadata.title}, Section: ${doc.metadata.section}`);
+        });
+
+        const relevantDocs = scoredDocs.slice(0, 5).map(doc => new Document({
+            pageContent: doc.pageContent,
+            metadata: doc.metadata
+        }));
+
+        console.log(`Retrieved ${relevantDocs.length} relevant documents`);
+        return relevantDocs;
+    } catch (error) {
+        console.error("Error during document retrieval:", error);
+        return [];
+    }
+}
+
+// Optional: Add a function to preprocess the query
+function preprocessQuery(query: string): string {
+    return query.toLowerCase().replace(/[^\w\s]/gi, '');
+}
+
+// Optional: Add a cache for frequently accessed embeddings
+const embeddingCache = new Map<string, number[]>();
+
+async function getCachedEmbedding(text: string, embeddings: GoogleGenerativeAIEmbeddings): Promise<number[]> {
+    if (embeddingCache.has(text)) {
+        return embeddingCache.get(text)!;
+    }
+    const embedding = await embeddings.embedQuery(text);
+    embeddingCache.set(text, embedding);
+    return embedding;
 }
