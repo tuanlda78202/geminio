@@ -1,0 +1,28 @@
+# TITLE: Tìm hiểu về Gemma cùng chuyên gia AI/ML ⛳
+## SUBTOPIC: Diễn giả và Chủ đề
+### TAGS: Gemma, Nguyễn Khánh Linh, AI/ML, Google I/O Extended, Small Language Model, Gemini, Open-Source
+
+CONTENT:
+Tìm hiểu về Gemma cùng chuyên gia AI/ML ⛳
+📍Link đăng ký: https://googleiox.gdghanoi.com/ 
+📍Link đăng ký trao đổi trực tiếp 1:1 cùng diễn giả: https://googleiox.gdghanoi.com/OneOneMeeting 
+👉Diễn giả: Nguyễn Khánh Linh - Founder @NeuroPurrfect AI
+👉Chủ đề: Gemma: Gemini's Open-Source Twin and The Rise of Small Language Model for Everyone
+
+🗣️Về diễn giả:
+Khởi nguồn từ niềm đam mê với ngành khoa học máy tính, chị Khánh Linh đã trở thành kỹ sư Machine Learning với hơn 11 năm kinh nghiệm trong NLP (Xử lý ngôn ngữ tự nhiên). Chị được biết đến là một trong những nhân vật có tầm ảnh hưởng và tiếng nói hàng đầu trên Linkedin trong lĩnh vực AI.
+Hiện chị đang là nhà sáng lập của NeuroPurrfect AI - một doanh nghiệp startup, chuyên cung cấp các dịch vụ về lập trình, cố vấn về AI/ML, đồng thời viết tài liệu kỹ thuật và nghiên cứu. Chị cũng là người thành lập Beautiful Mind Vietnam - tổ chức phi lợi nhuận về tâm lý và sức khỏe tâm thần cho người Việt.
+Lần đầu tiên xuất hiện tại Google I/O Extended Hanoi 2024, chị Linh hứa hẹn sẽ thổi một làn gió mới tới chương trình với chủ đề:
+👉 Gemma: Gemini's Open-Source Twin and The Rise of Small Language Model for Everyone
+Cùng sự ra đời của Gemma, bản sao của Gemini, một mô hình ngôn ngữ nhỏ (Small Language Model - SML) mã nguồn mở, chị Linh sẽ chia sẻ về sự phát triển của các SML và vai trò của chúng trong việc dân chủ hóa Trí tuệ Nhân tạo (AI), bằng cách làm cho công nghệ ngôn ngữ tiên tiến dễ tiếp cận hơn với mọi người. 🔥
+
+⛳ Đến Google I/O Extended Hanoi 2024 để lắng nghe những chia sẻ hay ho và nắm lấy cơ hội chia sẻ trực tiếp 1:1 cùng chị Khánh Linh tại: https://googleiox.gdghanoi.com/OneOneMeeting 
+
+Google I/O Extended Hanoi 2024
+📍Thời gian: 13:00 - 18:00, Thứ Bảy, ngày 06/07/2024
+📍Địa điểm: Học viện Công nghệ Bưu chính Viễn thông, 96A Trần Phú, Hà Đông Hà Nội
+📍Cập nhật thông tin tại: https://fb.me/e/4AtkQndsi 
+
+RELATED TOPICS: Gemma, Gemini, Small Language Model, Open-Source, AI/ML, NLP, NeuroPurrfect AI, Beautiful Mind Vietnam
+
+#GoogleIOExtendedHanoi #GDGHanoi #GoogleIO #Googlefordevelopers #IO24 #AI #Firebase #Cloud #Android #Flutter

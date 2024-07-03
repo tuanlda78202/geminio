@@ -1,0 +1,15 @@
+# TITLE: Về Google Developer Group Hanoi - GDG Hanoi
+## SUBTOPIC: Thông tin và Thành viên
+### TAGS: GDG Hanoi, Google Developer Group, Google for Developers, Cộng đồng lập trình
+
+CONTENT:
+Về Google Developer Group Hanoi - GDG Hanoi
+Với sứ mệnh giúp các nhà phát triển cải thiện kỹ năng và kết nối họ với thế giới, GDG Hanoi luôn cố gắng tổ chức những sự kiện và khóa đào tạo có giá trị nhất cho cộng đồng Google Developers tại Việt Nam.
+
+Là đơn vị tiên phong trong các hoạt động dành cho cộng đồng nhà phát triển, lập trình viên và sinh viên ngành CNTT tại Hà Nội, dưới sự quản lý của Google Developers, GDG Hanoi được ủy quyền độc quyền tổ chức nhiều sự kiện công nghệ Google tại Hà Nội nói riêng và Việt Nam nói chung. Mỗi năm, GDG Hanoi mang đến nhiều chương trình, sự kiện và cuộc thi lớn để cộng đồng tham gia và thường xuyên kết nối các nguồn hỗ trợ cho cộng đồng CNTT địa phương.
+
+Trưởng nhóm: Vũ Khánh Linh
+Đồng trưởng nhóm: Nguyễn Minh Diệp Hằng 
+Thành viên Coreteam: Lê Đức Anh Tuấn, Huỳnh Thanh Tú, Bùi Văn Thành, Đinh Thành Hiếu, Lê Mai Anh, Nguyễn Thanh Huyền, Đinh Hữu Hoàng, Phạm Quỳnh Mai, Đào Phương Thảo, Trịnh Thuỳ Trang
+
+#GDGHanoi #GoogleDeveloperGroup #GoogleforDevelopers

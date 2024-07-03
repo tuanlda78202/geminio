@@ -1,13 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { Document } from "langchain/document";
-import { Chroma } from "@langchain/community/vectorstores/chroma";
-import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
-import { TextLoader } from "langchain/document_loaders/fs/text";
-import * as fs from 'fs';
-import * as path from 'path';
-
-const CHROMA_DB_PATH = 'data/chroma_db';
-const TEXT_DIR = 'data/text_documents';
+import { retrieveRelevantDocs } from "./useRAG";
 
 const GEMINI_SYSTEM_PROMPT = `Bạn tên là Bông, là trợ lý ảo thông minh của Google Developer Groups Hà Nội.
 
@@ -47,91 +39,6 @@ Luôn giữ thái độ chuyên nghiệp, thân thiện và hữu ích trong m�
 interface ConversationTurn {
   role: 'user' | 'assistant';
   content: string;
-}
-
-async function initializeChromaDB(): Promise<Chroma> {
-  const embeddings = new GoogleGenerativeAIEmbeddings({
-    modelName: "embedding-001",
-    apiKey: import.meta.env.VITE_GEMINI_KEY,
-  });
-
-  return await Chroma.fromExistingCollection(
-    embeddings,
-    { collectionName: "gdg_hanoi_docs" }
-  );
-}
-
-function parseDocument(content: string): Record<string, string> {
-  const sections = content.split(/(?=# |## |### )/);
-  const result: Record<string, string> = {};
-
-  sections.forEach(section => {
-    const lines = section.trim().split('\n');
-    const header = lines[0].replace(/^#+\s*/, '').trim();
-    const body = lines.slice(1).join('\n').trim();
-
-    if (header.startsWith('TITLE:')) {
-      result.title = header.replace('TITLE:', '').trim();
-    } else if (header.startsWith('SUBTOPIC:')) {
-      result.subtopic = header.replace('SUBTOPIC:', '').trim();
-    } else if (header.startsWith('TAGS:')) {
-      result.tags = header.replace('TAGS:', '').trim();
-    } else {
-      result[header.toLowerCase()] = body;
-    }
-  });
-
-  return result;
-}
-
-export async function embedDocuments() {
-  const embeddings = new GoogleGenerativeAIEmbeddings({
-    modelName: "embedding-001",
-    apiKey: import.meta.env.VITE_GEMINI_KEY,
-  });
-
-  const vectorStore = await Chroma.fromExistingCollection(
-    embeddings,
-    { collectionName: "gdg_hanoi_docs" }
-  );
-
-  const files = fs.readdirSync(TEXT_DIR);
-
-  for (const file of files) {
-    const filePath = path.join(TEXT_DIR, file);
-    const loader = new TextLoader(filePath);
-    const [doc] = await loader.load();
-
-    const parsedDoc = parseDocument(doc.pageContent);
-    const { title, subtopic, tags, content, ...sections } = parsedDoc;
-
-    // Embed each section separately
-    for (const [sectionName, sectionContent] of Object.entries(sections)) {
-      await vectorStore.addDocuments([
-        new Document({
-          pageContent: sectionContent,
-          metadata: {
-            title,
-            subtopic,
-            tags,
-            section: sectionName,
-            file
-          }
-        })
-      ]);
-    }
-  }
-
-  console.log("Documents embedded and stored in Chroma DB");
-}
-
-async function retrieveRelevantDocs(query: string): Promise<Document[]> {
-  const vectorStore = await initializeChromaDB();
-
-  // Perform a similarity search
-  const results = await vectorStore.similaritySearch(query, 5);
-
-  return results;
 }
 
 export async function makeGeminiRequest(
@@ -187,6 +94,3 @@ export async function makeGeminiRequest(
     throw error;
   }
 }
-
-// Uncomment to embed documents
-embedDocuments();

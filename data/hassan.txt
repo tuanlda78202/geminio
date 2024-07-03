@@ -1,0 +1,23 @@
+# TITLE: Mở cánh cửa tới những tính năng công nghệ AI mới nhất với chuyên gia Android 🔥 
+## SUBTOPIC: Diễn giả và Chủ đề
+### TAGS: Hassan Abid, Google Developer Expert, Android, Google I/O Extended, Generative AI
+
+CONTENT:
+Mở cánh cửa tới những tính năng công nghệ AI mới nhất với chuyên gia Android 🔥 
+📍Link đăng ký miễn phí: http://googleiox.gdghanoi.com/
+👉Diễn giả: Anh Hassan Abid - Google Developer Expert Android
+👉Chủ đề: What's New in Android: Embracing the Era of Generative AI
+
+🗣️ Anh Hassan là Google Developers Expert mảng Android từ năm 2016, hiện đang sinh sống và làm việc tại Singapore với vai trò là Giám đốc Công nghệ (CTO) tại BeLive Technology. Trước đó, anh từng sống ở Seoul và đóng góp một phần cho sự phát triển của Mobile Video Streaming SDK và ứng dụng chỉnh sửa video trên Android, KineMaster. 
+⛳Niềm đam mê dành cho Android và AI chính là nguồn động lực giúp anh giữ vững tinh thần phát triển cộng đồng, luôn tích cực chia sẻ kiến thức thông qua các bài viết blog, sự kiện và hội nghị kết nối.
+👉 Đến với Google I/O Extended Hanoi 2024, anh Hassan sẽ mang lại những kiến thức về các tính năng AI Tạo sinh mới cùng ứng dụng thực tế của Generative AI trên Android. Không chỉ vậy, những dự đoán về xu hướng tương lai của Generative AI đến từ chuyên gia nhiều năm kinh nghiệm cũng sẽ được anh chia sẻ và thảo luận với những người tham gia. 
+🔥 Hãy đăng ký ngay để không bỏ lỡ cơ hội được lắng nghe những góc nhìn mới lạ về công nghệ của vị chuyên gia này: http://googleiox.gdghanoi.com/
+
+Google I/O Extended Hanoi 2024
+📍Thời gian: 13:00 - 18:00, Thứ Bảy, ngày 06/07/2024
+📍Địa điểm: Hà Nội, Việt Nam
+📍Cập nhật thông tin tại: https://fb.me/e/4AtkQndsi
+
+RELATED TOPICS: Hassan Abid, Android, Generative AI, Mobile Video Streaming, KineMaster, BeLive Technology, AI, Firebase, Cloud, Flutter
+
+#GoogleIOExtendedHanoi #GDGHanoi #GoogleIO #Googlefordevelopers #IO24 #AI #Firebase #Cloud #Android #Flutter

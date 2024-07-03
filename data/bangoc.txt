@@ -1,0 +1,26 @@
+# TITLE: Cùng gặp gỡ chuyên gia phát triển Google AI/ML tại Google I/O Extended Hanoi 2024
+## SUBTOPIC: Diễn giả và Chủ đề
+### TAGS: Bá Ngọc, Google Developer Expert, AI/ML, Google I/O Extended, ProtonX, RAG, Chatbot, Semantic Methods
+
+CONTENT:
+Cùng gặp gỡ chuyên gia phát triển Google AI/ML tại Google I/O Extended Hanoi 2024
+📍Link đăng ký miễn phí: http://googleiox.gdghanoi.com/ 
+👉Diễn giả: Bá Ngọc - Google Developer Expert AI/ML, Founder @ProtonX
+👉Chủ đề: Supercharge Your Chatbot with RAG and Advanced Semantic Methods
+
+🌟Về diễn giả:
+Anh Bá Ngọc chính là người sáng lập của ProtonX và VietAI Hà Nội, đồng thời là Google Developer Expert Machine Learning đầu tiên tại Việt Nam. Thành tích nổi bật của anh phải kể đến, trong năm 2020 và 2021, anh đã đào tạo hơn 120 lập trình viên tại ProtonX đạt chứng chỉ TensorFlow, đưa Việt Nam vào top 4 quốc gia có số lượng người thi đỗ nhiều nhất. Đặc biệt, năm 2022, anh khởi nghiệp công ty trí tuệ nhân tạo của mình với bộ gõ tiên phong - Studio - giúp người dùng soạn thảo văn bản chỉ với một câu ý tưởng ban đầu.
+
+🌟 Về chủ đề Supercharge Your Chatbot with RAG and Advanced Semantic Methods:
+Anh Bá Ngọc sẽ có những chia sẻ giới thiệu về cách tăng cường hiệu suất chatbot với Retrieval-Augmented Generation (RAG) và các phương pháp ngữ nghĩa tiên tiến. Đây là các kỹ thuật giúp chatbot hiểu và xử lý ngôn ngữ tự nhiên một cách hiệu quả hơn, mang lại trải nghiệm tốt hơn cho người dùng. 
+
+🔹 Cùng nắm bắt những xu hướng công nghệ mới nhất trong lĩnh vực AI/ML tại: http://googleiox.gdghanoi.com/ 
+
+Google I/O Extended Hanoi 2024
+📍Thời gian: 13:00 - 17:30, Thứ Bảy, ngày 06/07/2024
+📍Địa điểm: Hà Nội, Việt Nam
+📍Cập nhật thông tin tại: https://fb.me/e/4AtkQndsi 
+
+RELATED TOPICS: Bá Ngọc, ProtonX, AI/ML, RAG, Chatbot, Semantic Methods, TensorFlow, VietAI
+
+#GoogleIOExtendedHanoi #GDGHanoi #GoogleIO #Googlefordevelopers #IO24 #AI #Firebase #Cloud #Android #Flutter

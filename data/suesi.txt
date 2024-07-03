@@ -1,0 +1,30 @@
+# TITLE: Hé lộ nữ diễn giả Flutter đầu tiên tại Google I/O Extended Hanoi 2024 ☀️
+## SUBTOPIC: Diễn giả và Chủ đề
+### TAGS: Suesi Tran, Google Developer Expert, Flutter, Google I/O Extended, MentorME, Flutter 3.22
+
+CONTENT:
+Hé lộ nữ diễn giả Flutter đầu tiên tại Google I/O Extended Hanoi 2024 ☀️
+📍Link đăng ký miễn phí: http://googleiox.gdghanoi.com/
+👉Diễn giả: Suesi Tran - Mentor @MentorME, Google Developer Expert Flutter
+👉Chủ đề: What's new in Flutter 3.22 and how to use them.
+
+👩Chị Suesi hiện đang là Google Developer Expert mảng Flutter, đồng thời có 16 năm kinh nghiệm trong việc phát triển phần mềm di động. 🔥
+💼 Ngoài ra, với vai trò thúc đẩy và nâng cao sự phát triển của cộng đồng trong ngành công nghệ thông tin, chị đang giữ vai trò là Mentor tại MentorME - đơn vị kết nối người Việt tại Úc với các cố vấn giàu kinh nghiệm trong lĩnh vực Công nghệ thông tin và truyền thông, Phân tích doanh nghiệp và Phân tích dữ liệu. MentorME hỗ trợ phát triển bản thân và sự nghiệp thông qua:
+- Chương trình Đào Tạo Thực Tế (On-Job-Training): Thực hành ngay từ đầu với các dự án thực tế trong lĩnh vực CNTT&TT, Phân tích doanh nghiệp và Phân tích dữ liệu.
+- Định hướng nghề nghiệp (Career Coaching): Định hướng nghề nghiệp phù hợp với từng cá nhân, đảm bảo cho sự phát triển lâu dài tại Úc.
+- Giới thiệu việc làm: Kết nối và giới thiệu các cơ hội nghề nghiệp phù hợp.
+- Cộng đồng MentorME: Mạng lưới Mentor - Mentee phủ rộng toàn nước Úc luôn sẵn sàng hỗ trợ và kết nối giúp người mới đến Úc nhanh chóng hòa nhập và ổn định cuộc sống.
+- Hệ sinh thái SEEDsoft: Hệ sinh thái đối tác cung cấp trọn gói các dịch vụ Du học - Việc làm - Đầu tư - Định cư, đáp ứng mọi nhu cầu của khách hàng.
+- Chương trình Đào tạo Visa 407 Độc quyền với MentorME: Đội ngũ chuyên gia di trú giàu kinh nghiệm của MentorME sẽ hỗ trợ bạn từ A đến Z trong quá trình xin visa 407, bao gồm đánh giá hồ sơ, chuẩn bị hồ sơ, hướng dẫn nộp hồ sơ và luyện tập phỏng vấn. Nhờ đó, bạn sẽ tăng cơ hội nhận được visa thành công và bắt đầu hành trình mới tại Úc một cách thuận lợi.
+- Tìm hiểu thêm về MentorME tại: https://mentorplus.com.au/
+
+🗣️Chia sẻ tại Google I/O Extended Hanoi 2024 với chủ đề “𝗪𝗵𝗮𝘁'𝘀 𝗻𝗲𝘄 𝗶𝗻 𝗙𝗹𝘂𝘁𝘁𝗲𝗿 𝟯.𝟮𝟮 𝗮𝗻𝗱 𝗵𝗼𝘄 𝘁𝗼 𝘂𝘀𝗲 𝘁𝗵𝗲𝗺”, chị Suesi sẽ giới thiệu tới cộng đồng những thay đổi mới nhất trong phiên bản Flutter 3.22. Phiên bản này có gì mới và khác biệt so với các phiên bản trước? Nó sẽ được ứng dụng ra sao và mang lại trải nghiệm gì cho người dùng tại Google I/O Extended Hanoi 2024? Hãy đến và tìm hiểu cùng GDG Hanoi nhé! 😉
+
+Google I/O Extended Hanoi 2024
+📍Thời gian: Thứ Bảy, ngày 06/07/2024
+📍Địa điểm: Hà Nội, Việt Nam
+📍Cập nhật thông tin tại: https://fb.me/e/4AtkQndsi  
+
+RELATED TOPICS: Suesi Tran, Flutter, Flutter 3.22, Mobile Development, MentorME, On-Job-Training, Career Coaching, SEEDsoft, Visa 407, AI, Firebase, Cloud, Android
+
+#GoogleIOExtendedHanoi #GDGHanoi #GoogleIO #Googlefordevelopers #IO24 #AI #Flutter #Android #Firebase #Cloud #MentorME
