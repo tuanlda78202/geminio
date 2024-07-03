@@ -22,7 +22,7 @@ const App = () => {
           <div className="gradient-inner-border h-full">
             <video
               ref={videoRef}
-              className="w-full h-full video-container"
+              className="w-full h-full video-container video-mirror"
               autoPlay
               playsInline
               muted
